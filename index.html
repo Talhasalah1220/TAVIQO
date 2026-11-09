@@ -1,170 +1,460 @@
 
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#07152e">
-<title>TAVIQO</title>
+<meta name="theme-color" content="#061329">
+<title>TAVIQO - Luxury World</title>
+
 <style>
 *{box-sizing:border-box}
 body{
- margin:0;background:#07101f;color:white;
+ margin:0;background:#030916;color:#fff;
  font-family:Arial,sans-serif;
 }
-.app{max-width:480px;margin:auto;min-height:100vh;background:#09162b}
-.cover{
- height:255px;
- padding:25px 16px;
- text-align:center;
- position:relative;
+.app{
+ max-width:480px;margin:auto;min-height:100vh;
+ background:#08162c;overflow:hidden;
+}
+
+/* LUXURY WORLD BANNER */
+.hero{
+ height:330px;position:relative;overflow:hidden;
  background:
- radial-gradient(circle at 50% 40%,#2769a9 0%,transparent 40%),
- linear-gradient(135deg,#07152e,#123e72,#080e20);
- border-bottom:2px solid #d9ad4e;
+ radial-gradient(ellipse at 50% 45%,#347cb5 0%,#153c65 35%,transparent 70%),
+ linear-gradient(140deg,#020918,#102d50,#030a18);
+ border-bottom:2px solid #d9b65d;
 }
-.cover:before{
+.hero:before{
  content:"";position:absolute;inset:0;
- background:repeating-linear-gradient(120deg,transparent 0 35px,#ffffff08 36px 37px);
+ background:
+ repeating-linear-gradient(120deg,transparent 0 35px,#ffffff09 36px 37px),
+ radial-gradient(circle at 50% 40%,#d7b45422,transparent 60%);
 }
-.brand{position:relative;padding-top:18px}
-.brand h1{
- font-size:35px;letter-spacing:5px;
- color:#f5d17b;margin:8px 0;
- text-shadow:0 0 15px #d9ad4e;
+.orbit{
+ position:absolute;top:35px;left:50%;
+ transform:translateX(-50%);
+ width:245px;height:180px;
+ border:1px solid #e8c76b88;border-radius:50%;
+ transform-origin:center;
 }
-.brand p{font-size:12px;letter-spacing:2px}
-.globe{font-size:48px}
-.profile{
- position:relative;margin-top:-55px;padding:0 18px;
+.orbit.two{
+ width:195px;height:220px;
+ transform:translateX(-50%) rotate(55deg);
+ border-color:#ffffff44;
 }
-.avatar{
- width:112px;height:112px;border-radius:50%;
- border:4px solid #e6bd60;
- background:linear-gradient(135deg,#163e70,#080d1b);
+.globe{
+ position:absolute;top:48px;left:50%;
+ transform:translateX(-50%);
+ width:135px;height:135px;border-radius:50%;
+ background:
+ radial-gradient(circle at 35% 25%,#c6edff,#347bb4 35%,#092548 75%);
+ box-shadow:0 0 30px #4a9ddd88,0 0 70px #d7b45433,
+ inset -18px -15px 30px #020a1c;
  display:flex;align-items:center;justify-content:center;
- font-size:45px;box-shadow:0 0 18px #d9ad4e66;
+ font-size:65px;
 }
-.name{font-size:23px;font-weight:bold;margin-top:12px}
-.username{color:#a8b7ca;font-size:13px;margin-top:5px}
-.star{color:#f7c95e;font-size:19px}
-.bio{font-size:13px;color:#d0d8e5;margin:12px 0}
-.stats{display:flex;justify-content:space-around;text-align:center;margin:20px 0}
-.stats strong{font-size:19px;display:block}
-.stats span{font-size:11px;color:#aebbd0}
-.actions{display:flex;gap:10px}
+.hero-content{
+ position:absolute;top:190px;width:100%;
+ text-align:center;z-index:2;
+}
+.hero-content h1{
+ margin:0;color:#f4d47f;font-size:34px;
+ letter-spacing:6px;
+ text-shadow:0 0 8px #d4a947,0 0 22px #d4a94788;
+}
+.hero-content p{
+ margin:9px 0;color:#f6e6bd;
+ font-size:10px;letter-spacing:2px;
+}
+.hero-content .tag{
+ font-size:11px;color:#eac66b;
+}
+.spark{
+ position:absolute;color:#ffe29a;
+ text-shadow:0 0 12px #f4c95c;
+ animation:shine 2s infinite alternate;
+}
+.s1{left:12%;top:65px}
+.s2{right:13%;top:100px}
+.s3{right:20%;top:25px}
+@keyframes shine{
+ from{opacity:.3;transform:scale(.8)}
+ to{opacity:1;transform:scale(1.25)}
+}
+
+/* PROFILE */
+.profile-area{
+ position:relative;margin-top:-47px;z-index:3;
+ padding:0 17px 18px;
+ background:linear-gradient(180deg,#0b1c35dd,#08162c);
+ border-radius:28px 28px 0 0;
+}
+.profile-top{
+ display:flex;align-items:end;gap:15px;
+}
+.avatar-ring{
+ width:112px;height:112px;border-radius:50%;
+ padding:4px;flex-shrink:0;
+ background:conic-gradient(#fff0ae,#bd8730,#fff0ae,#a46a21,#fff0ae);
+ box-shadow:0 0 20px #e5b84c88;
+ animation:ring 5s linear infinite;
+}
+@keyframes ring{to{filter:hue-rotate(25deg)}}
+.avatar{
+ width:100%;height:100%;border-radius:50%;
+ background:radial-gradient(circle,#27618e,#07152c);
+ border:3px solid #07152c;
+ display:flex;align-items:center;justify-content:center;
+ font-size:48px;overflow:hidden;
+}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.profile-info{padding-bottom:8px;min-width:0}
+.name{
+ font-size:23px;font-weight:bold;
+ color:#fff0c5;
+}
+.star{
+ color:#f5c85e;
+ text-shadow:0 0 9px #ffc94d;
+}
+.account{
+ font-size:11px;color:#e9c76e;
+ margin-top:6px;letter-spacing:1px;
+}
+.username{font-size:12px;color:#9eb2ce;margin-top:5px}
+.bio{
+ margin:16px 0;color:#d6e0ee;
+ font-size:13px;line-height:1.7;
+}
+
+/* STATS */
+.stats{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:9px;margin:17px 0;
+}
+.stat{
+ text-align:center;padding:13px 3px;
+ border:1px solid #b98e43;
+ border-radius:12px;
+ background:linear-gradient(145deg,#173555,#0a172c);
+ box-shadow:inset 0 0 14px #e5b84c0c;
+}
+.stat strong{
+ display:block;color:#f4d27d;
+ font-size:21px;
+}
+.stat span{
+ display:block;color:#bdcce0;
+ font-size:11px;margin-top:5px;
+}
+.actions{display:flex;gap:9px}
 .btn{
- flex:1;border:0;border-radius:7px;padding:12px;
- font-weight:bold;background:#e5b950;color:#10182a;
+ flex:1;padding:12px 5px;border-radius:9px;
+ background:linear-gradient(135deg,#f6d98c,#b98532);
+ color:#101b2e;border:1px solid #fbe4a3;
+ font-weight:bold;font-size:12px;
+ cursor:pointer;
 }
-.btn.dark{background:#172b49;color:white;border:1px solid #b99143}
-.tools{
+.btn.dark{
+ background:linear-gradient(135deg,#173658,#0b1c35);
+ color:#f4d27d;border:1px solid #b98e43;
+}
+
+/* ICON TABS */
+.icon-tabs{
  display:flex;justify-content:space-around;
- padding:19px 5px;border-bottom:1px solid #253751;
- margin-top:15px;
+ padding:18px 5px 14px;
+ background:#09172c;
+ border-top:1px solid #283c58;
+ border-bottom:1px solid #283c58;
 }
-.tool{font-size:25px;color:#e9c66e;cursor:pointer}
-.tool.active{border-bottom:3px solid #e9c66e;padding-bottom:8px}
-.tabs{
+.icon-tab{
+ width:45px;height:39px;
+ display:flex;align-items:center;justify-content:center;
+ color:#d9b65d;font-size:25px;
+ cursor:pointer;
+ border-radius:8px;
+}
+.icon-tab.active{
+ background:#c99c4530;
+ border-bottom:2px solid #f3d27d;
+ color:#ffe39a;
+}
+
+/* CONTENT */
+.content-tabs{
  display:flex;justify-content:space-around;
- padding:17px 5px;color:#aab9ce;
+ padding:17px 0 12px;
+ color:#9eb2ce;font-size:13px;
 }
-.tabs span{cursor:pointer;padding-bottom:9px}
-.tabs .selected{color:#f2c65e;border-bottom:2px solid #f2c65e}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+.content-tabs span{cursor:pointer;padding-bottom:9px}
+.content-tabs .selected{
+ color:#f5d27c;
+ border-bottom:2px solid #e7bd60;
+}
+.grid{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:3px;
+}
 .video{
  height:165px;position:relative;
  display:flex;align-items:center;justify-content:center;
- background:linear-gradient(145deg,#173e6a,#090f20);
- font-size:38px;
+ overflow:hidden;
+ background:radial-gradient(circle at 40% 30%,#3476a3,#0b1a31 70%);
 }
-.video:nth-child(3n+2){background:linear-gradient(145deg,#66502b,#111a30)}
+.video:nth-child(3n+2){
+ background:radial-gradient(circle at 40% 30%,#9b7539,#16223b 75%);
+}
+.video:nth-child(3n){
+ background:radial-gradient(circle at 40% 30%,#314e82,#10152c 75%);
+}
+.video .symbol{
+ font-size:43px;text-shadow:0 0 18px #f2cf78;
+}
 .video small{
- position:absolute;bottom:7px;left:7px;font-size:11px;
- color:white;background:#0008;padding:3px 6px;border-radius:4px;
+ position:absolute;bottom:7px;left:7px;
+ background:#0009;padding:4px 7px;
+ border-radius:5px;font-size:10px;
 }
-footer{text-align:center;color:#8293aa;font-size:11px;padding:25px}
+footer{text-align:center;padding:25px;color:#8ea3bd;font-size:10px}
+
+/* EDIT PROFILE WINDOW */
+.modal{
+ display:none;position:fixed;inset:0;
+ background:#000d;z-index:20;
+ align-items:center;justify-content:center;
+ padding:15px;
+}
+.panel{
+ background:linear-gradient(145deg,#163253,#07152b);
+ border:1px solid #d6ad57;
+ border-radius:17px;padding:20px;
+ width:100%;max-width:420px;
+ max-height:90vh;overflow:auto;
+}
+.panel h2{color:#f4d27b;margin-top:0}
+.panel label{display:block;margin:13px 0 6px;font-size:13px}
+.panel input,.panel textarea{
+ width:100%;padding:12px;
+ border-radius:8px;border:1px solid #647994;
+ background:#07152c;color:white;
+}
+.panel textarea{min-height:75px}
+.panel button{margin-top:13px;width:100%}
 </style>
 </head>
+
 <body>
 <div class="app">
 
-<header class="cover">
- <div class="brand">
-  <div class="globe">🌍</div>
+<header class="hero">
+ <div class="orbit"></div>
+ <div class="orbit two"></div>
+ <div class="globe">🌍</div>
+ <span class="spark s1">✦</span>
+ <span class="spark s2">✧</span>
+ <span class="spark s3">✦</span>
+
+ <div class="hero-content">
   <h1>TAVIQO</h1>
   <p>TOGETHER FOR A BETTER TOMORROW</p>
-  <p>✦ LEARN • EARN • GROW ✦</p>
+  <div class="tag">✦ LEARN • EARN • GROW ✦</div>
  </div>
 </header>
 
-<section class="profile">
- <div class="avatar">T<span class="star">★</span></div>
+<section class="profile-area">
 
- <div class="name">
-  TAVIQO <span class="star">★</span>
+ <div class="profile-top">
+  <div class="avatar-ring">
+   <div class="avatar" id="avatar">T</div>
+  </div>
+
+  <div class="profile-info">
+   <div class="name" id="displayName">
+    TAVIQO <span class="star">★</span>
+   </div>
+   <div class="account">★ PROFESSIONAL ACCOUNT</div>
+   <div class="username" id="displayUser">@taviqo.official</div>
+  </div>
  </div>
- <div class="username">@taviqo.official</div>
 
- <div class="bio">
+ <div class="bio" id="displayBio">
   Welcome to TAVIQO 🌍<br>
-  Learn • Earn • Grow<br>
   Together for a better tomorrow.
  </div>
 
  <div class="stats">
-  <div><strong>0</strong><span>Posts</span></div>
-  <div><strong>0</strong><span>Followers</span></div>
-  <div><strong>0</strong><span>Following</span></div>
-  <div><strong>0</strong><span>Likes</span></div>
+  <div class="stat">
+   <strong>0</strong><span>Followers</span>
+  </div>
+  <div class="stat">
+   <strong>0</strong><span>Following</span>
+  </div>
+  <div class="stat">
+   <strong>0</strong><span>Likes</span>
+  </div>
  </div>
 
  <div class="actions">
-  <button class="btn" onclick="alert('Profile editing will be added next!')">Edit Profile</button>
-  <button class="btn dark" onclick="alert('Share profile')">Share Profile</button>
-  <button class="btn dark" onclick="alert('More options')">•••</button>
+  <button class="btn" onclick="openEditor()">✎ Edit Profile</button>
+  <button class="btn dark" onclick="shareProfile()">↗ Share</button>
+  <button class="btn dark" onclick="alert('More options coming soon')">•••</button>
  </div>
 </section>
 
-<nav class="tools">
- <span class="tool active" title="Videos">▦</span>
- <span class="tool" title="Favorites">☆</span>
- <span class="tool" title="Reposts">🔁</span>
- <span class="tool" title="Private">🔒</span>
- <span class="tool" title="Liked">♡</span>
+<nav class="icon-tabs">
+ <span class="icon-tab active" title="Videos" onclick="selectIcon(this)">▦</span>
+ <span class="icon-tab" title="Favorites" onclick="selectIcon(this)">☆</span>
+ <span class="icon-tab" title="Reposts" onclick="selectIcon(this)">⟳</span>
+ <span class="icon-tab" title="Private" onclick="selectIcon(this)">♙</span>
+ <span class="icon-tab" title="Liked" onclick="selectIcon(this)">♡</span>
 </nav>
 
-<nav class="tabs">
- <span class="selected" onclick="selectTab(this)">Videos</span>
- <span onclick="selectTab(this)">Popular</span>
- <span onclick="selectTab(this)">Recent</span>
+<nav class="content-tabs">
+ <span class="selected" onclick="selectContent(this)">Videos</span>
+ <span onclick="selectContent(this)">Popular</span>
+ <span onclick="selectContent(this)">Recent</span>
 </nav>
 
-<section class="grid" id="videos">
- <div class="video">▶<small>0 views</small></div>
- <div class="video">🌍<small>0 views</small></div>
- <div class="video">⭐<small>0 views</small></div>
- <div class="video">🎬<small>0 views</small></div>
- <div class="video">🚀<small>0 views</small></div>
- <div class="video">🏆<small>0 views</small></div>
+<section class="grid">
+ <div class="video"><span class="symbol">▶</span><small>0 views</small></div>
+ <div class="video"><span class="symbol">🌍</span><small>0 views</small></div>
+ <div class="video"><span class="symbol">⭐</span><small>0 views</small></div>
+ <div class="video"><span class="symbol">🎬</span><small>0 views</small></div>
+ <div class="video"><span class="symbol">🚀</span><small>0 views</small></div>
+ <div class="video"><span class="symbol">🏆</span><small>0 views</small></div>
 </section>
 
-<footer>© 2026 TAVIQO • All Rights Reserved</footer>
+<footer>© 2026 TAVIQO • ALL RIGHTS RESERVED</footer>
+</div>
+
+<!-- PROFILE EDITOR -->
+<div class="modal" id="editor">
+ <div class="panel">
+  <h2>✦ Edit TAVIQO Profile</h2>
+
+  <label>Profile Picture</label>
+  <input type="file" id="photo" accept="image/*">
+
+  <label>Full Name</label>
+  <input id="nameInput" placeholder="Your name">
+
+  <label>Username</label>
+  <input id="userInput" placeholder="Username">
+
+  <label>Bio</label>
+  <textarea id="bioInput" placeholder="Write your bio"></textarea>
+
+  <button class="btn" onclick="saveProfile()">SAVE CHANGES</button>
+  <button class="btn dark" onclick="closeEditor()">CANCEL</button>
+ </div>
 </div>
 
 <script>
-function selectTab(element){
- document.querySelectorAll('.tabs span').forEach(tab=>{
-  tab.classList.remove('selected');
- });
- element.classList.add('selected');
+const $=id=>document.getElementById(id);
+
+function escapeHTML(s){
+ return s.replace(/[&<>"']/g,c=>({
+ '&':'&amp;','<':'&lt;','>':'&gt;',
+ '"':'&quot;',"'":'&#39;'
+ }[c]));
 }
-document.querySelectorAll('.tool').forEach(tool=>{
- tool.addEventListener('click',()=>{
-  document.querySelectorAll('.tool').forEach(t=>t.classList.remove('active'));
-  tool.classList.add('active');
- });
-});
+
+function loadProfile(){
+ try{
+  const p=JSON.parse(localStorage.getItem('taviqoProfile')||'{}');
+  if(p.name){
+   $('displayName').innerHTML=escapeHTML(p.name)+' <span class="star">★</span>';
+  }
+  if(p.user)$('displayUser').textContent='@'+p.user.replace(/^@/,'');
+  if(p.bio)$('displayBio').textContent=p.bio;
+  if(p.photo)$('avatar').innerHTML='<img src="'+p.photo+'" alt="Profile">';
+ }catch(e){}
+}
+
+function openEditor(){
+ let p={};
+ try{p=JSON.parse(localStorage.getItem('taviqoProfile')||'{}')}catch(e){}
+ $('nameInput').value=p.name||'TAVIQO';
+ $('userInput').value=p.user||'taviqo.official';
+ $('bioInput').value=p.bio||'Welcome to TAVIQO 🌍';
+ $('photo').value='';
+ $('editor').style.display='flex';
+}
+
+function closeEditor(){
+ $('editor').style.display='none';
+}
+
+function saveProfile(){
+ const p={
+  name:$('nameInput').value.trim()||'TAVIQO',
+  user:$('userInput').value.trim()||'taviqo.official',
+  bio:$('bioInput').value.trim()
+ };
+
+ const file=$('photo').files[0];
+
+ function finish(){
+  try{
+   localStorage.setItem('taviqoProfile',JSON.stringify(p));
+   loadProfile();
+   closeEditor();
+   alert('TAVIQO profile saved successfully!');
+  }catch(e){
+   alert('Storage is full. Please use a smaller profile picture.');
+  }
+ }
+
+ if(file){
+  if(file.size>1000000){
+   alert('Please choose a picture smaller than 1 MB.');
+   return;
+  }
+  const reader=new FileReader();
+  reader.onload=()=>{
+   p.photo=reader.result;
+   finish();
+  };
+  reader.readAsDataURL(file);
+ }else{
+  try{
+   const old=JSON.parse(localStorage.getItem('taviqoProfile')||'{}');
+   if(old.photo)p.photo=old.photo;
+  }catch(e){}
+  finish();
+ }
+}
+
+async function shareProfile(){
+ try{
+  if(navigator.share){
+   await navigator.share({
+    title:'TAVIQO',
+    text:'Visit TAVIQO',
+    url:location.href
+   });
+  }else{
+   await navigator.clipboard.writeText(location.href);
+   alert('Profile link copied!');
+  }
+ }catch(e){}
+}
+
+function selectIcon(el){
+ document.querySelectorAll('.icon-tab').forEach(x=>x.classList.remove('active'));
+ el.classList.add('active');
+}
+
+function selectContent(el){
+ document.querySelectorAll('.content-tabs span').forEach(x=>x.classList.remove('selected'));
+ el.classList.add('selected');
+}
+
+loadProfile();
 </script>
 </body>
 </html>
+اے اے
