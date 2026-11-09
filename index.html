@@ -1,43 +1,170 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="ur">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07152e">
 <title>TAVIQO</title>
 <style>
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #101827;
-  color: white;
-  text-align: center;
+*{box-sizing:border-box}
+body{
+ margin:0;background:#07101f;color:white;
+ font-family:Arial,sans-serif;
 }
-header {
-  padding: 25px;
-  background: #17243a;
-  font-size: 28px;
-  font-weight: bold;
-  color: #38d9a9;
+.app{max-width:480px;margin:auto;min-height:100vh;background:#09162b}
+.cover{
+ height:255px;
+ padding:25px 16px;
+ text-align:center;
+ position:relative;
+ background:
+ radial-gradient(circle at 50% 40%,#2769a9 0%,transparent 40%),
+ linear-gradient(135deg,#07152e,#123e72,#080e20);
+ border-bottom:2px solid #d9ad4e;
 }
-main { padding: 35px 20px; }
-h1 { font-size: 32px; }
-p { color: #cbd5e1; }
-button {
-  background: #38d9a9;
-  color: #102030;
-  border: 0;
-  padding: 14px 30px;
-  border-radius: 10px;
-  font-size: 18px;
-  font-weight: bold;
+.cover:before{
+ content:"";position:absolute;inset:0;
+ background:repeating-linear-gradient(120deg,transparent 0 35px,#ffffff08 36px 37px);
 }
+.brand{position:relative;padding-top:18px}
+.brand h1{
+ font-size:35px;letter-spacing:5px;
+ color:#f5d17b;margin:8px 0;
+ text-shadow:0 0 15px #d9ad4e;
+}
+.brand p{font-size:12px;letter-spacing:2px}
+.globe{font-size:48px}
+.profile{
+ position:relative;margin-top:-55px;padding:0 18px;
+}
+.avatar{
+ width:112px;height:112px;border-radius:50%;
+ border:4px solid #e6bd60;
+ background:linear-gradient(135deg,#163e70,#080d1b);
+ display:flex;align-items:center;justify-content:center;
+ font-size:45px;box-shadow:0 0 18px #d9ad4e66;
+}
+.name{font-size:23px;font-weight:bold;margin-top:12px}
+.username{color:#a8b7ca;font-size:13px;margin-top:5px}
+.star{color:#f7c95e;font-size:19px}
+.bio{font-size:13px;color:#d0d8e5;margin:12px 0}
+.stats{display:flex;justify-content:space-around;text-align:center;margin:20px 0}
+.stats strong{font-size:19px;display:block}
+.stats span{font-size:11px;color:#aebbd0}
+.actions{display:flex;gap:10px}
+.btn{
+ flex:1;border:0;border-radius:7px;padding:12px;
+ font-weight:bold;background:#e5b950;color:#10182a;
+}
+.btn.dark{background:#172b49;color:white;border:1px solid #b99143}
+.tools{
+ display:flex;justify-content:space-around;
+ padding:19px 5px;border-bottom:1px solid #253751;
+ margin-top:15px;
+}
+.tool{font-size:25px;color:#e9c66e;cursor:pointer}
+.tool.active{border-bottom:3px solid #e9c66e;padding-bottom:8px}
+.tabs{
+ display:flex;justify-content:space-around;
+ padding:17px 5px;color:#aab9ce;
+}
+.tabs span{cursor:pointer;padding-bottom:9px}
+.tabs .selected{color:#f2c65e;border-bottom:2px solid #f2c65e}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+.video{
+ height:165px;position:relative;
+ display:flex;align-items:center;justify-content:center;
+ background:linear-gradient(145deg,#173e6a,#090f20);
+ font-size:38px;
+}
+.video:nth-child(3n+2){background:linear-gradient(145deg,#66502b,#111a30)}
+.video small{
+ position:absolute;bottom:7px;left:7px;font-size:11px;
+ color:white;background:#0008;padding:3px 6px;border-radius:4px;
+}
+footer{text-align:center;color:#8293aa;font-size:11px;padding:25px}
 </style>
 </head>
 <body>
-<header>TAVIQO</header>
-<main>
-<h1>Welcome to TAVIQO!</h1>
-<p>Your journey starts here.</p>
-<button>Get Started</button>
-</main>
+<div class="app">
+
+<header class="cover">
+ <div class="brand">
+  <div class="globe">🌍</div>
+  <h1>TAVIQO</h1>
+  <p>TOGETHER FOR A BETTER TOMORROW</p>
+  <p>✦ LEARN • EARN • GROW ✦</p>
+ </div>
+</header>
+
+<section class="profile">
+ <div class="avatar">T<span class="star">★</span></div>
+
+ <div class="name">
+  TAVIQO <span class="star">★</span>
+ </div>
+ <div class="username">@taviqo.official</div>
+
+ <div class="bio">
+  Welcome to TAVIQO 🌍<br>
+  Learn • Earn • Grow<br>
+  Together for a better tomorrow.
+ </div>
+
+ <div class="stats">
+  <div><strong>0</strong><span>Posts</span></div>
+  <div><strong>0</strong><span>Followers</span></div>
+  <div><strong>0</strong><span>Following</span></div>
+  <div><strong>0</strong><span>Likes</span></div>
+ </div>
+
+ <div class="actions">
+  <button class="btn" onclick="alert('Profile editing will be added next!')">Edit Profile</button>
+  <button class="btn dark" onclick="alert('Share profile')">Share Profile</button>
+  <button class="btn dark" onclick="alert('More options')">•••</button>
+ </div>
+</section>
+
+<nav class="tools">
+ <span class="tool active" title="Videos">▦</span>
+ <span class="tool" title="Favorites">☆</span>
+ <span class="tool" title="Reposts">🔁</span>
+ <span class="tool" title="Private">🔒</span>
+ <span class="tool" title="Liked">♡</span>
+</nav>
+
+<nav class="tabs">
+ <span class="selected" onclick="selectTab(this)">Videos</span>
+ <span onclick="selectTab(this)">Popular</span>
+ <span onclick="selectTab(this)">Recent</span>
+</nav>
+
+<section class="grid" id="videos">
+ <div class="video">▶<small>0 views</small></div>
+ <div class="video">🌍<small>0 views</small></div>
+ <div class="video">⭐<small>0 views</small></div>
+ <div class="video">🎬<small>0 views</small></div>
+ <div class="video">🚀<small>0 views</small></div>
+ <div class="video">🏆<small>0 views</small></div>
+</section>
+
+<footer>© 2026 TAVIQO • All Rights Reserved</footer>
+</div>
+
+<script>
+function selectTab(element){
+ document.querySelectorAll('.tabs span').forEach(tab=>{
+  tab.classList.remove('selected');
+ });
+ element.classList.add('selected');
+}
+document.querySelectorAll('.tool').forEach(tool=>{
+ tool.addEventListener('click',()=>{
+  document.querySelectorAll('.tool').forEach(t=>t.classList.remove('active'));
+  tool.classList.add('active');
+ });
+});
+</script>
 </body>
 </html>
